@@ -1,7 +1,9 @@
 from flask import Flask, request
-from .logger import get_logger
-
-logger = get_logger(__name__)
+from logger import get_logger
+import os
+LOG_LEVEL = "DEBUG" if os.environ.get(
+    "FLASK_ENV") == "development" else "INFO"
+logger = get_logger(__name__, LOG_LEVEL)
 
 app = Flask(__name__)
 

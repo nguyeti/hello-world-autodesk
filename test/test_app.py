@@ -27,7 +27,7 @@ class AppTestCase(unittest.TestCase):
     def test_index_get_with_accept_header(self):
         """
             GIVEN a Flask application configured for testing
-            WHEN the '/' page is requested (GET) with the header 'Accept' set to 'application/json'
+            WHEN the '/' page is requested (GET) with a header 'Accept' set to 'application/json'
             THEN check that the reponse is valid
         """
         response = self.test_app.get(
